@@ -54,7 +54,7 @@ const TicketPrice = () => {
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <div className="flex items-baseline gap-2 mb-1">
-                    <h2 className="text-4xl font-semibold text-white/60">₹499</h2>
+                    <h2 className="text-4xl font-semibold text-white/60">₹299</h2>
                   </div>
                 </div>
                 <div className="px-3 py-1.5">
@@ -91,7 +91,7 @@ const TicketPrice = () => {
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <div className="flex items-baseline gap-2 mb-1">
-                    <h2 className="text-4xl font-semibold text-white/60">₹499</h2>
+                    <h2 className="text-4xl font-semibold text-white/60">₹299</h2>
                   </div>
                 </div>
                 <div className="px-3 py-1.5">
@@ -139,7 +139,7 @@ const TicketPrice = () => {
                         letterSpacing: '-0.02em'
                       }}
                     >
-                      ₹499
+                      ₹299
                     </h2>
                   </div>
                 </div>
