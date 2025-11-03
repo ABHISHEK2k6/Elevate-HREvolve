@@ -93,8 +93,8 @@ export default function Agenda() {
   const scheduleItems = [
     {
       activity: 'Welcome Address',
-      speakers: 'Deepa Nair',
-      topic: '6D Technologies | HR Evolve Member',
+      speakers: 'Deepa Nair, \n6D Technologies | HR Evolve Member',
+      topic: '',
       type: 'admin'
     },
     {
