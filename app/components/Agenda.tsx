@@ -129,7 +129,7 @@ export default function Agenda() {
     },
     {
       activity: 'Power Talk',
-      speakers: '(Yet to be decided)',
+      speakers: 'Yet to be decided',
       topic: '',
       type: 'session'
     },

@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-// import Speakers from './components/Speakers';
+import Speakers from './components/Speakers';
 import WhyAttend from './components/WhyAttend';
 import Agenda from './components/Agenda';
 import Venue from './components/Venue';
@@ -33,7 +33,7 @@ export default function Home() {
 
         <About />
 
-        {/* <Speakers /> */}
+        <Speakers />
 
         <WhyAttend />
 
