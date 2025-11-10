@@ -12,6 +12,7 @@ export default function Navbar() {
   const navItems = [
     // { name: 'Speakers', href: '#speakers' },
     { name: 'About', href: '#about' },
+    { name: 'Speakers', href: '#speakers' },
     { name: 'Why Attend', href: '#why-attend' },
     { name: 'Agenda', href: '#agenda' },
     { name: 'Venue', href: '#venue' },
