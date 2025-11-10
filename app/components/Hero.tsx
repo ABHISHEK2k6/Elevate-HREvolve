@@ -24,13 +24,24 @@ export default function Hero() {
 
         {/* Subtitle */}
         <motion.h2
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-8 sm:mb-12 leading-tight tracking-widest"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-2 leading-tight tracking-widest"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           style={{ letterSpacing: '0.2em' }}
         >
           SHAPING THE FUTURE
+        </motion.h2>
+
+        
+        <motion.h2
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-widest"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          style={{ letterSpacing: '0.2em' }}
+        >
+          LEADING THROUGH THE HUMAN -AI NEXUS
         </motion.h2>
 
         {/* Description */}

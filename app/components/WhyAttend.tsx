@@ -37,13 +37,14 @@ export default function WhyAttend() {
     },
     {
       title: '',
-      subtitle: 'Governance Conundrum: AI, Compliance, and the Ethics of Work',
-      description: 'Ensuring Trust, Transparency, and Accountability in AI-Driven Organizations. With AI adoption comes risk—ethical, legal, and reputational. HR must pioneer responsible governance frameworks that balance innovation with compliance.',
+      subtitle: 'AI + HI: Creating a Future-Ready HR Function',
+      description: 'Discover how human intelligence and artificial intelligence can work hand in hand to build a smarter, more agile HR function. Learn about practical AI tools, the HR adoption journey, and real-world use cases balancing augmentation and automation — along with insights on prompt engineering, governance, and change management.',
       takeaways: [
-        'The new compliance landscape for AI in people processes',
-        'Embedding governance frameworks and audit mechanisms',
-        'Managing bias, transparency, and data privacy',
-        'Building an ethics-first organizational culture in the AI era',
+        'Understanding AI tools and tech in HR',
+        'The AI Adoption Journey for HR',
+        'Augmentation vs. Automation: Practical Use Cases',
+        'Prompt Engineering & Maximizing AI Tools',
+        'Corporate AI Governance and Change Management',
       ],
     },
     {

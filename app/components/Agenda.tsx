@@ -99,55 +99,49 @@ export default function Agenda() {
     },
     {
       activity: 'Inaugural Function',
-      speakers: 'Guest 1 (Yet to be decided)\nGuest 2 (Yet to be decided)\nGuest 3 (Yet to be decided)\nGuest 4 (Yet to be decided)',
+      speakers: '• Seeram Sambasiva Rao IAS: Special Secretary (E & ITD) / Chairman, Kerala State IT Mission\n• Anoop Ambika, CEO, Kerala Start-up Mission\n• Sreekumar V, Secretary, GTech, Centre Head Tata Elxsi\n• Col. Sanjeev Nair (Retd.), CEO, Technopark\n• Deepu S Nath, MD, Faya',
       topic: '',
       type: 'admin'
     },
     {
       activity: 'Keynote Address',
-      speakers: 'Nisha Gopinath\nVice President HR and Head of HR IBM, India and South Asia',
+      speakers: 'Nisha Gopinath\nVice President and Head of HR IBM, India and South Asia',
       topic: 'Shaping the Future: Leading through the Human–AI Nexus',
       type: 'keynote'
     },
     {
-      activity: 'Power Talk 1',
-      speakers: '(Yet to be decided)',
+      activity: 'Power Talk',
+      speakers: 'Charles Godwin,\nHR Leader, Zoho Corporation',
       topic: 'Learning Rewired: The Skill-Shelf-Life Crisis Management',
       type: 'session'
     },
     {
-      activity: 'Power Talk 2',
-      speakers: 'SHRM',
-      topic: 'Governance Conundrum: AI, Compliance, and the Ethics of Work',
+      activity: 'Special Address',
+      speakers: 'Magical Rafi,\nFounder & Chief Mentor, Magic of Change',
+      topic: 'Perform with Purpose: The Heartbeat Behind High Achievement',
       type: 'session'
     },
     {
-      activity: 'Power Talk 3',
-      speakers: 'Great Place to Work® Institute, India',
-      topic: 'The Talent Reset: Repurposing People for the New Work Order',
+      activity: 'Power Talk',
+      speakers: 'Saurabh Singh,\nConsulting and Capability at SHRM India',
+      topic: 'AI + HI: Creating a Future-Ready HR Function',
       type: 'session'
     },
     {
-      activity: 'Power Talk 4',
-      speakers: 'Muhammed Rafi\nFounder & Chief Mentor, Magic of Change',
-      topic: '',
-      type: 'session'
-    },
-    {
-      activity: 'Power Talk 5',
-      speakers: 'LinkedIn (Yet to Confirm)',
+      activity: 'Power Talk',
+      speakers: '(Yet to be decided)',
       topic: '',
       type: 'session'
     },
     {
       activity: 'Panel Discussion',
-      speakers: 'Moderator – TBD (Yet to Confirm)\nPanel Members:\n1. IBS\n2. Guest 1\n3. Guest 2\n4. Guest 3',
-      topic: 'The Future of Work: Bridging the Human–AI Continuum',
+      speakers: '• Jayan Nair, Chief People Officer - IBS Software Services\n• Manoj Elanjickal, Director - People & Culture, H&R Block India\n• Varun Palat, Deputy Vice President - HR, Federal Bank',
+      topic: 'Future of Work - Bridging the Human-AI Continuum',
       type: 'panel'
     },
     {
       activity: 'Closing Remarks',
-      speakers: 'HR Evolve Member',
+      speakers: '',
       topic: '',
       type: 'admin'
     }
@@ -197,98 +191,210 @@ export default function Agenda() {
             </h3>
           </motion.div>
 
+          <motion.div
+            className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          >
+            <h3
+              className="text-white font-extraboldbold"
+              style={{
+                fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                fontSize: 'clamp(16px, 4vw, 18px)',
+                fontWeight: 600,
+                letterSpacing: '-0.03em',
+                lineHeight: '1.4em'
+              }}
+            >
+              Registration at 8:30 AM
+            </h3>
+          </motion.div>
+
           <div className="space-y-4 sm:space-y-6">
             {scheduleItems.map((item, index) => (
-              <motion.div
-                key={index}
-                className="rounded-lg p-4 sm:p-6"
-                style={{
-                  border: `1px solid ${item.type === 'keynote' ? 'rgba(239, 200, 38, 0.3)' :
-                    item.type === 'panel' ? 'rgba(34, 197, 94, 0.3)' :
-                      item.type === 'session' ? 'rgba(59, 130, 246, 0.3)' :
-                        item.type === 'admin' ? 'rgba(168, 85, 247, 0.3)' : 'rgba(255, 255, 255, 0.2)'
-                    }`,
-                  backgroundColor: `${item.type === 'keynote' ? 'rgba(239, 200, 38, 0.05)' :
-                    item.type === 'panel' ? 'rgba(34, 197, 94, 0.05)' :
-                      item.type === 'session' ? 'rgba(59, 130, 246, 0.05)' :
-                        item.type === 'admin' ? 'rgba(168, 85, 247, 0.05)' : 'transparent'
-                    }`
-                }}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.3 + (index * 0.1),
-                  ease: "easeOut"
-                }}
-                whileHover={{
-                  scale: 1.02,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                  {/* Activity Column */}
-                  <div className="flex flex-col justify-center">
-                    <h3
-                      className="font-extrabold"
-                      style={{
-                        fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                        fontSize: 'clamp(16px, 4vw, 20px)',
-                        fontWeight: 700,
-                        letterSpacing: '-0.01em',
-                        color: 'white',
-                        filter: 'brightness(1.1) contrast(1.2)'
-                      }}
-                    >
-                      {item.activity}
-                    </h3>
-                  </div>
-
-                  {/* Speakers Column */}
-                  <div className="md:col-span-1">
-                    <div className="mb-2">
-                      <h4 className="text-white/80 text-xs uppercase font-semibold">Speakers/ Dignitaries</h4>
+              <div key={index}>
+                <motion.div
+                  className="rounded-lg p-4 sm:p-6"
+                  style={{
+                    border: `1px solid ${item.type === 'keynote' ? 'rgba(239, 200, 38, 0.3)' :
+                      item.type === 'panel' ? 'rgba(34, 197, 94, 0.3)' :
+                        item.type === 'session' ? 'rgba(59, 130, 246, 0.3)' :
+                          item.type === 'admin' ? 'rgba(168, 85, 247, 0.3)' : 'rgba(255, 255, 255, 0.2)'
+                      }`,
+                    backgroundColor: `${item.type === 'keynote' ? 'rgba(239, 200, 38, 0.05)' :
+                      item.type === 'panel' ? 'rgba(34, 197, 94, 0.05)' :
+                        item.type === 'session' ? 'rgba(59, 130, 246, 0.05)' :
+                          item.type === 'admin' ? 'rgba(168, 85, 247, 0.05)' : 'transparent'
+                      }`
+                  }}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3 + (index * 0.1),
+                    ease: "easeOut"
+                  }}
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                    {/* Activity Column */}
+                    <div className="flex flex-col justify-center">
+                      <h3
+                        className="font-extrabold"
+                        style={{
+                          fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                          fontSize: 'clamp(16px, 4vw, 20px)',
+                          fontWeight: 700,
+                          letterSpacing: '-0.01em',
+                          color: 'white',
+                          filter: 'brightness(1.1) contrast(1.2)'
+                        }}
+                      >
+                        {item.activity}
+                      </h3>
                     </div>
-                    <div
-                      className="text-white font-bold"
-                      style={{
-                        fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                        fontSize: 'clamp(13px, 3.5vw, 15px)',
-                        lineHeight: '1.4em'
-                      }}
-                    >
-                      {item.speakers.split('\n').map((speaker, idx) => (
-                        <p key={idx} className={idx > 0 ? 'mt-1' : ''}>{speaker}</p>
-                      ))}
+
+                    {/* Speakers Column */}
+                    <div className="md:col-span-1">
+                      <div className="mb-2">
+                        <h4 className="text-white/80 text-xs uppercase font-semibold">Speakers/ Dignitaries</h4>
+                      </div>
+                      <div
+                        className="text-white font-bold"
+                        style={{
+                          fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                          fontSize: 'clamp(13px, 3.5vw, 15px)',
+                          lineHeight: '1.4em'
+                        }}
+                      >
+                        {item.speakers.split('\n').map((speaker, idx) => (
+                          <p key={idx} className={idx > 0 ? 'mt-1' : ''}>{speaker}</p>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Topic Column */}
+                    <div className="md:col-span-1">
+                      {item.topic && (
+                        <>
+                          <div className="mb-2">
+                            <h4 className="text-white/80 text-xs uppercase font-semibold">
+                              Topic/ Theme
+                            </h4>
+                          </div>
+                          <p
+                            className="text-white font-bold"
+                            style={{
+                              fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                              fontSize: 'clamp(13px, 3.5vw, 15px)',
+                              lineHeight: '1.4em'
+                            }}
+                          >
+                            {item.topic}
+                          </p>
+                        </>
+                      )}
                     </div>
                   </div>
+                </motion.div>
 
-                  {/* Topic Column */}
-                  <div className="md:col-span-1">
-                    {item.topic && (
-                      <>
-                        <div className="mb-2">
-                          <h4 className="text-white/80 text-xs uppercase font-semibold">
-                            Topic/ Theme
-                          </h4>
-                        </div>
-                        <p
-                          className="text-white font-bold"
-                          style={{
-                            fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                            fontSize: 'clamp(13px, 3.5vw, 15px)',
-                            lineHeight: '1.4em'
-                          }}
-                        >
-                          {item.topic}
-                        </p>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
+                {/* Add special containers after Inaugural Function */}
+                {item.activity === 'Inaugural Function' && (
+                  <>
+                    <motion.div
+                      className="border border-white/20 rounded-lg p-3 sm:p-4 my-6 sm:my-8 text-center"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                    >
+                      <h3
+                        className="text-white font-extraboldbold"
+                        style={{
+                          fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                          fontSize: 'clamp(16px, 4vw, 18px)',
+                          fontWeight: 600,
+                          letterSpacing: '-0.03em',
+                          lineHeight: '1.4em'
+                        }}
+                      >
+                        Felicitation to Great Place To Work Certified Organizations
+                      </h3>
+                    </motion.div>
+
+                    <motion.div
+                      className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+                    >
+                      <h3
+                        className="text-white font-extraboldbold"
+                        style={{
+                          fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                          fontSize: 'clamp(16px, 4vw, 18px)',
+                          fontWeight: 600,
+                          letterSpacing: '-0.03em',
+                          lineHeight: '1.4em'
+                        }}
+                      >
+                        Setting the tone of Elevate 2025 by Deepu S Nath, MD, Faya
+                      </h3>
+                    </motion.div>
+                  </>
+                )}
+                {item.topic === 'Learning Rewired: The Skill-Shelf-Life Crisis Management' && (
+                  <>
+                    <motion.div
+                      className="border border-white/20 rounded-lg p-3 sm:p-4 my-6 sm:my-8 text-center"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                    >
+                      <h3
+                        className="text-white font-extraboldbold"
+                        style={{
+                          fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                          fontSize: 'clamp(16px, 4vw, 18px)',
+                          fontWeight: 600,
+                          lineHeight: '1.4em'
+                        }}
+                      >
+                        Lunch at 1:15 pm
+                      </h3>
+                    </motion.div>
+                  </>
+                )}
+              </div>
             ))}
+                      <motion.div
+            className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          >
+            <h3
+              className="text-white font-extraboldbold"
+              style={{
+                fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                fontSize: 'clamp(16px, 4vw, 18px)',
+                fontWeight: 600,
+                letterSpacing: '-0.03em',
+                lineHeight: '1.4em'
+              }}
+            >
+              Music fiesta by MuBand
+            </h3>
+          </motion.div>
           </div>
         </div>
 
@@ -307,7 +413,7 @@ export default function Agenda() {
               lineHeight: '1.4em'
             }}
           >
-            *as of 23rd October 2025, and subject to refinement
+            *as of 10th November 2025, and subject to refinement
           </p>
         </motion.div>
 
