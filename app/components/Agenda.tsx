@@ -129,21 +129,15 @@ export default function Agenda() {
     },
     {
       activity: 'Power Talk',
-      speakers: '',
-      topic: '',
+      speakers: 'Karthika Nair S\nAssociate Director',
+      topic: 'The Talent Reset: Repurposing People for the New Work Order',
       type: 'session'
     },
     {
       activity: 'Panel Discussion',
-      speakers: '• Jayan Nair, Chief People Officer - IBS Software Services\n• Manoj Elanjickal, Director - People & Culture, H&R Block India\n• Varun Palat, Deputy Vice President - HR, Federal Bank',
+      speakers: '• Jayan Nair, Chief People Officer - IBS Software Services\n• Manoj Elanjickal, Director - People & Culture, H&R Block India\n• Varun Palat, Deputy Vice President - HR, Federal Bank\n•Karthika Nair S, Associate Director',
       topic: 'Future of Work - Bridging the Human-AI Continuum',
       type: 'panel'
-    },
-    {
-      activity: 'Closing Remarks',
-      speakers: '',
-      topic: '',
-      type: 'admin'
     }
   ];
 
@@ -216,7 +210,7 @@ export default function Agenda() {
             {scheduleItems.map((item, index) => (
               <div key={index}>
                 <motion.div
-                  className="rounded-lg p-4 sm:p-6"
+                  className="rounded-lg p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl relative overflow-hidden group"
                   style={{
                     border: `1px solid ${item.type === 'keynote' ? 'rgba(239, 200, 38, 0.3)' :
                       item.type === 'panel' ? 'rgba(34, 197, 94, 0.3)' :
@@ -242,64 +236,87 @@ export default function Agenda() {
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    {/* Activity Column */}
-                    <div className="flex flex-col justify-center">
-                      <h3
-                        className="font-extrabold"
-                        style={{
-                          fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                          fontSize: 'clamp(16px, 4vw, 20px)',
-                          fontWeight: 700,
-                          letterSpacing: '-0.01em',
-                          color: 'white',
-                          filter: 'brightness(1.1) contrast(1.2)'
-                        }}
-                      >
-                        {item.activity}
-                      </h3>
-                    </div>
+                  {/* Animated glowing border on hover - border only */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+                    style={{
+                      background: `linear-gradient(45deg, 
+                        ${item.type === 'keynote' ? '#fbbf24, #f59e0b, #eab308, #fbbf24' :
+                          item.type === 'panel' ? '#10b981, #059669, #34d399, #10b981' :
+                            item.type === 'session' ? '#3b82f6, #2563eb, #60a5fa, #3b82f6' :
+                              item.type === 'admin' ? '#a855f7, #9333ea, #c084fc, #a855f7' : '#60a5fa, #3b82f6, #2563eb, #60a5fa'})`,
+                      backgroundSize: '300% 300%',
+                      animation: 'gradientShift 3s ease infinite',
+                      mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                      maskComposite: 'xor',
+                      WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                      WebkitMaskComposite: 'xor',
+                      padding: '2px',
+                      zIndex: 1
+                    }}
+                  />
 
-                    {/* Speakers Column */}
-                    <div className="md:col-span-1">
-                      <div className="mb-2">
-                        <h4 className="text-white/80 text-xs uppercase font-semibold">Speakers/ Dignitaries</h4>
+                  {/* Content wrapper to ensure it's above the border */}
+                  <div className="relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                      {/* Activity Column */}
+                      <div className="flex flex-col justify-center">
+                        <h3
+                          className="font-extrabold"
+                          style={{
+                            fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                            fontSize: 'clamp(16px, 4vw, 20px)',
+                            fontWeight: 700,
+                            letterSpacing: '-0.01em',
+                            color: 'white',
+                            filter: 'brightness(1.1) contrast(1.2)'
+                          }}
+                        >
+                          {item.activity}
+                        </h3>
                       </div>
-                      <div
-                        className="text-white font-bold"
-                        style={{
-                          fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                          fontSize: 'clamp(13px, 3.5vw, 15px)',
-                          lineHeight: '1.4em'
-                        }}
-                      >
-                        {item.speakers.split('\n').map((speaker, idx) => (
-                          <p key={idx} className={idx > 0 ? 'mt-1' : ''}>{speaker}</p>
-                        ))}
-                      </div>
-                    </div>
 
-                    {/* Topic Column */}
-                    <div className="md:col-span-1">
-                      {item.topic && (
-                        <>
-                          <div className="mb-2">
-                            <h4 className="text-white/80 text-xs uppercase font-semibold">
-                              Topic/ Theme
-                            </h4>
-                          </div>
-                          <p
-                            className="text-white font-bold"
-                            style={{
-                              fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                              fontSize: 'clamp(13px, 3.5vw, 15px)',
-                              lineHeight: '1.4em'
-                            }}
-                          >
-                            {item.topic}
-                          </p>
-                        </>
-                      )}
+                      {/* Speakers Column */}
+                      <div className="md:col-span-1">
+                        <div className="mb-2">
+                          <h4 className="text-white/80 text-xs uppercase font-semibold">Speakers/ Dignitaries</h4>
+                        </div>
+                        <div
+                          className="text-white font-bold"
+                          style={{
+                            fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                            fontSize: 'clamp(13px, 3.5vw, 15px)',
+                            lineHeight: '1.4em'
+                          }}
+                        >
+                          {item.speakers.split('\n').map((speaker, idx) => (
+                            <p key={idx} className={idx > 0 ? 'mt-1' : ''}>{speaker}</p>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Topic Column */}
+                      <div className="md:col-span-1">
+                        {item.topic && (
+                          <>
+                            <div className="mb-2">
+                              <h4 className="text-white/80 text-xs uppercase font-semibold">
+                                Topic/ Theme
+                              </h4>
+                            </div>
+                            <p
+                              className="text-white font-bold"
+                              style={{
+                                fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                                fontSize: 'clamp(13px, 3.5vw, 15px)',
+                                lineHeight: '1.4em'
+                              }}
+                            >
+                              {item.topic}
+                            </p>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -375,26 +392,46 @@ export default function Agenda() {
                 )}
               </div>
             ))}
-                      <motion.div
-            className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-          >
-            <h3
-              className="text-white font-extraboldbold"
-              style={{
-                fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                fontSize: 'clamp(16px, 4vw, 18px)',
-                fontWeight: 600,
-                letterSpacing: '-0.03em',
-                lineHeight: '1.4em'
-              }}
+            <motion.div
+              className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             >
-              Music fiesta by MuBand
-            </h3>
-          </motion.div>
+              <h3
+                className="text-white font-extraboldbold"
+                style={{
+                  fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                  fontSize: 'clamp(16px, 4vw, 18px)',
+                  fontWeight: 600,
+                  letterSpacing: '-0.03em',
+                  lineHeight: '1.4em'
+                }}
+              >
+                Music fiesta by MuBand
+              </h3>
+            </motion.div>
+            <motion.div
+              className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            >
+              <h3
+                className="text-white font-extraboldbold"
+                style={{
+                  fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                  fontSize: 'clamp(16px, 4vw, 18px)',
+                  fontWeight: 600,
+                  letterSpacing: '-0.03em',
+                  lineHeight: '1.4em'
+                }}
+              >
+                Closing Remarks
+              </h3>
+            </motion.div>
           </div>
         </div>
 
@@ -413,57 +450,96 @@ export default function Agenda() {
               lineHeight: '1.4em'
             }}
           >
-            *as of 10th November 2025, and subject to refinement
+            *as of 14th November 2025, and subject to refinement
           </p>
         </motion.div>
 
-        {/* Ticker Section */}
-        <div className="mb-16 mt-12" style={{ opacity: 1, transform: 'perspective(1200px)' }}>
-          <Link href="https://makemypass.com/event/elevate25-hr-conclave" target="_blank" rel="noopener noreferrer">
-            <div style={{ display: 'flex', width: '100%', height: '80px', maxWidth: '100%', maxHeight: '100%', placeItems: 'center', margin: '0px', padding: '0px', listStyleType: 'none', opacity: 1, overflow: 'hidden' }}>
-              <ul
-                className="animate-marquee"
-                style={{
-                  display: 'flex',
-                  width: '100%',
-                  height: '100%',
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  placeItems: 'center',
-                  margin: '0px',
-                  padding: '0px',
-                  listStyleType: 'none',
-                  gap: '40px',
-                  position: 'relative',
-                  flexDirection: 'row',
-                  willChange: 'transform'
-                }}
-              >
-                {[...Array(10)].map((_, index) => (
-                  <li key={index} style={{ flexShrink: 0 }}>
-                    <div className="flex items-center gap-4" style={{ flexShrink: 0 }}>
-                      <div style={{ display: 'contents' }}>
-                        <svg width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ color: 'rgb(255, 204, 0)', width: '24px', height: '24px' }}>
-                          <path d="M18.819 13.329l-5.324 5.99a2 2 0 01-2.99 0l-5.324-5.99a2 2 0 010-2.658l5.324-5.99a2 2 0 012.99 0l5.324 5.99a2 2 0 010 2.658z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
-                        </svg>
-                      </div>
-                      <p
-                        className="text-white uppercase whitespace-nowrap"
-                        style={{
-                          fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                          fontSize: '20px',
-                          fontWeight: 600,
-                          textTransform: 'uppercase'
-                        }}
-                      >
-                        Reserve Your Spot
-                      </p>
+        {/* Ticker Section with SOLD OUT marquee */}
+        <div className='overflow-hidden'>
+          <div className="mb-16 mt-12 relative" style={{ opacity: 1, transform: 'perspective(1200px)' }}>
+            {/* SOLD OUT Marquee floating over Reserve Your Spot section */}
+            <motion.div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none z-20 "
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.4,
+                delay: 0.5,
+                ease: "easeOut"
+              }}
+              style={{ transform: 'translate(-50%, -50%) rotate(-8deg)', width: '1500px', height: '30px' }}
+            >
+              <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center pointer-events-none z-30" style={{ transform: 'rotate(-8deg)' }}>
+                <div className="overflow-hidden bg-gradient-to-r from-red-500 to-red-600 shadow-xl" style={{ width: '1200px', height: '30px', borderRadius: '0px' }}>
+                  <div className="flex items-center h-full px-4">
+                    <div className="animate-marquee-soldout-small flex items-center whitespace-nowrap">
+                      {[...Array(100)].map((_, index) => (
+                        <div key={index} className="flex items-center mx-8">
+                          <span
+                            className="text-white font-bold uppercase tracking-wide"
+                            style={{
+                              fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                              fontSize: '18px',
+                              fontWeight: 700,
+                              lineHeight: '50px'
+                            }}
+                          >
+                            SOLD OUT
+                          </span>
+                        </div>
+                      ))}
                     </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <button className="w-full bg-gray-500 text-white opacity-60 cursor-not-allowed" disabled>
+              <div style={{ display: 'flex', width: '100%', height: '80px', maxWidth: '100%', maxHeight: '100%', placeItems: 'center', margin: '0px', padding: '0px', listStyleType: 'none', opacity: 1, overflow: 'hidden' }}>
+                <ul
+                  className="animate-marquee"
+                  style={{
+                    display: 'flex',
+                    width: '100%',
+                    height: '100%',
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    placeItems: 'center',
+                    margin: '0px',
+                    padding: '0px',
+                    listStyleType: 'none',
+                    gap: '40px',
+                    position: 'relative',
+                    flexDirection: 'row',
+                    willChange: 'transform'
+                  }}
+                >
+                  {[...Array(10)].map((_, index) => (
+                    <li key={index} style={{ flexShrink: 0 }}>
+                      <div className="flex items-center gap-4" style={{ flexShrink: 0 }}>
+                        <div style={{ display: 'contents' }}>
+                          <svg width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ color: 'rgb(255, 204, 0)', width: '24px', height: '24px' }}>
+                            <path d="M18.819 13.329l-5.324 5.99a2 2 0 01-2.99 0l-5.324-5.99a2 2 0 010-2.658l5.324-5.99a2 2 0 012.99 0l5.324 5.99a2 2 0 010 2.658z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                          </svg>
+                        </div>
+                        <p
+                          className="text-white uppercase whitespace-nowrap"
+                          style={{
+                            fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                            fontSize: '20px',
+                            fontWeight: 600,
+                            textTransform: 'uppercase'
+                          }}
+                        >
+                          Reserve Your Spot
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Partners Section */}
@@ -567,7 +643,7 @@ export default function Agenda() {
                     </>
                   )}
                 </ul>
-                
+
                 {/* Second set for seamless looping */}
                 <ul
                   style={{
@@ -600,6 +676,21 @@ export default function Agenda() {
 
 
       </div>
+
+      {/* Add CSS animations */}
+      <style jsx>{`
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -67,21 +67,45 @@ export default function Navbar() {
 
         {/* Mobile Navigation Toggle & CTA */}
         <div className="flex items-center gap-3">
-          {/* Desktop CTA Button */}
-          <div className="hidden lg:block">
-            <Link href="https://makemypass.com/event/elevate25-hr-conclave" target="_blank" rel="noopener noreferrer">
-              <button className="group bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-md font-bold shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3">
-                Buy Ticket
-                <svg
-                  className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-            </Link>
+          {/* Desktop CTA with SOLD OUT marquee floating in front */}
+          <div className="hidden lg:block relative">
+            {/* Buy Button - Disabled */}
+            <button className="group bg-gray-500 text-white px-4 py-2 rounded-full text-md font-bold shadow-2xl transition-all duration-300 flex items-center gap-3 cursor-not-allowed opacity-60" disabled>
+              Buy Ticket
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+            
+            {/* SOLD OUT Marquee floating over button */}
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center pointer-events-none z-30" style={{ transform: 'rotate(-8deg)' }}>
+              <div className="overflow-hidden bg-gradient-to-r from-red-500 to-red-600 shadow-xl" style={{ width: '250px', height: '25px', borderRadius: '0px' }}>
+                <div className="flex items-center h-full px-3">
+                  <div className="animate-marquee-soldout-small flex items-center whitespace-nowrap">
+                    {[...Array(100)].map((_, index) => (
+                      <div key={index} className="flex items-center mx-6">
+                        <span
+                          className="text-white font-bold uppercase tracking-wide"
+                          style={{
+                            fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                            fontSize: '14px',
+                            fontWeight: 700,
+                            transform: 'skewX(-15deg)'
+                          }}
+                        >
+                          SOLD OUT
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -131,11 +155,12 @@ export default function Navbar() {
 
             {/* Mobile CTA Button */}
             <div className="mt-6 pt-4 border-t border-purple-500/20">
-              <Link href="https://makemypass.com/event/elevate25-hr-conclave" target="_blank" rel="noopener noreferrer">
-                <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center justify-center gap-2">
+              <div className="relative inline-block w-full">
+                {/* Mobile Buy Button - Disabled */}
+                <button className="w-full bg-gray-500 text-white py-3 px-4 rounded-full text-lg font-bold shadow-lg transition-all duration-300 flex items-center justify-center gap-3 cursor-not-allowed opacity-60" disabled>
                   Buy Ticket
                   <svg
-                    className="w-4 h-4"
+                    className="w-5 h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -143,11 +168,72 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </button>
-              </Link>
+                
+                {/* SOLD OUT Marquee floating over mobile button */}
+                <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center pointer-events-none z-20" style={{ transform: 'rotate(6deg)' }}>
+                  <div className="overflow-hidden bg-gradient-to-r from-red-500 to-red-600 shadow-xl" style={{ width: '220px', height: '38px', borderRadius: '0px' }}>
+                    <div className="flex items-center h-full px-3">
+                      <div className="animate-marquee-soldout-small flex items-center whitespace-nowrap">
+                        {[...Array(100)].map((_, index) => (
+                          <div key={index} className="flex items-center mx-6">
+                            <span
+                              className="text-white font-bold uppercase tracking-wide"
+                              style={{
+                                fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                                fontSize: '15px',
+                                fontWeight: 700,
+                                transform: 'skewX(-15deg)'
+                              }}
+                            >
+                              SOLD OUT
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
       )}
     </motion.div>
   );
+}
+
+{/* SOLD OUT Marquee Animations */}
+const soldOutStyles = `
+  @keyframes marquee-soldout-fast {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee-soldout-mobile {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee-soldout-fast {
+    animation: marquee-soldout-fast 8s linear infinite;
+  }
+
+  .animate-marquee-soldout-mobile {
+    animation: marquee-soldout-mobile 10s linear infinite;
+  }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.innerHTML = soldOutStyles;
+  document.head.appendChild(style);
 }

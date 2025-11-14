@@ -110,7 +110,7 @@ export default function WhyAttend() {
                 {/* Theme Number and Title */}
                 <div className="mb-3">
                   <h4 
-                    className="mb-2"
+                    className="mb-2 text-justify"
                     style={{
                       fontFamily: '"Sora", "Sora Placeholder", sans-serif',
                       fontSize: '12px',
@@ -123,7 +123,7 @@ export default function WhyAttend() {
                     {theme.title}
                   </h4>
                   <h5 
-                    className="mb-3"
+                    className="mb-3 text-justify"
                     style={{
                       fontFamily: '"Sora", "Sora Placeholder", sans-serif',
                       fontSize: 'clamp(16px, 4vw, 18px)',
@@ -137,7 +137,7 @@ export default function WhyAttend() {
                 </div>
 
                 {/* Description */}
-                <div className="mb-4" style={{ minHeight: '100px' }}>
+                <div className="mb-4 text-justify" style={{ minHeight: '100px' }}>
                   <p 
                     style={{
                       fontFamily: '"Sora", "Sora Placeholder", sans-serif',

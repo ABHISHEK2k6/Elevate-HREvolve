@@ -132,3 +132,57 @@ body {
   display: flex;
   width: max-content;
 }
+
+/* SOLD OUT Marquee Animations */
+@keyframes marquee-soldout {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-soldout-fast {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-soldout-mobile {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-soldout {
+  animation: marquee-soldout 15s linear infinite;
+}
+
+.animate-marquee-soldout-fast {
+  animation: marquee-soldout-fast 8s linear infinite;
+}
+
+.animate-marquee-soldout-mobile {
+  animation: marquee-soldout-mobile 10s linear infinite;
+}
+
+/* Small SOLD OUT marquee for above buttons */
+@keyframes marquee-soldout-small {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-soldout-small {
+  animation: marquee-soldout-small 150s linear infinite;
+}

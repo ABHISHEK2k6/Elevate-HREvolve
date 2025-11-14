@@ -66,6 +66,12 @@ export default function Speakers() {
       image: '/speakers/speaker_9.jpg',
     },
     {
+      name: 'Karthika Nair S',
+      title: 'Associate Director',
+      company: '',
+      image: '/speakers/speaker_13.jpg',
+    },
+    {
       name: 'Jayan Nair',
       title: 'Chief People Officer',
       company: 'IBS Software Services',

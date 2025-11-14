@@ -7,6 +7,43 @@ import Image from 'next/image';
 const TicketPrice = () => {
   return (
     <section className="py-8 sm:py-16 px-2 sm:px-4 relative overflow-hidden min-h-screen flex items-center justify-center">
+      {/* SOLD OUT Marquee floating over entire section */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.4,
+          delay: 0.5,
+          ease: "easeOut"
+        }}
+        style={{ transform: 'translate(-50%, -50%) rotate(-15deg)', width: '1500px', height: '30px' }}
+      >
+        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center pointer-events-none z-30" style={{ transform: 'rotate(-15deg)' }}>
+          <div className="overflow-hidden bg-gradient-to-r from-red-500 to-red-600 shadow-xl" style={{ width: '1200px', height: '30px', borderRadius: '0px' }}>
+            <div className="flex items-center h-full px-4">
+              <div className="animate-marquee-soldout-small flex items-center whitespace-nowrap">
+                {[...Array(100)].map((_, index) => (
+                  <div key={index} className="flex items-center mx-8">
+                    <span
+                      className="text-white font-bold uppercase tracking-wide"
+                      style={{
+                        fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                        fontSize: '18px',
+                        fontWeight: 700,
+                        lineHeight: '50px'
+                      }}
+                    >
+                      SOLD OUT
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
       <div className="container mx-auto flex flex-col items-center justify-center">
         {/* Title */}
         <div className="text-center mb-8 sm:mb-12">
@@ -200,33 +237,30 @@ const TicketPrice = () => {
                 ))}
               </div>
 
-              {/* Buy Button */}
+              {/* Buy Button - Disabled */}
               <div className="text-center">
-                <Link href="https://makemypass.com/event/elevate25-hr-conclave" target="_blank" rel="noopener noreferrer">
-                  <button
-                    className="px-4 sm:px-6 py-2.5 sm:py-3 bg-red-500 text-white font-semibold rounded-full border border-red-500 hover:bg-red-600 transition-colors duration-300 flex items-center gap-2 mx-auto"
-                    style={{
-                      fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                      fontSize: 'clamp(14px, 3.5vw, 16px)',
-                      fontWeight: 600,
-                      letterSpacing: '-0.01em',
-                      lineHeight: '150%',
-                      borderRadius: '100px',
-                      backgroundColor: 'rgb(231, 76, 60)',
-                      borderColor: 'rgb(231, 76, 60)'
-                    }}
+                <button
+                  className="px-4 sm:px-6 py-2.5 sm:py-3 bg-gray-500 text-white font-semibold rounded-full border border-gray-500 transition-colors duration-300 flex items-center gap-2 mx-auto cursor-not-allowed opacity-60"
+                  style={{
+                    fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                    fontSize: 'clamp(14px, 3.5vw, 16px)',
+                    fontWeight: 600,
+                    letterSpacing: '-0.01em',
+                    lineHeight: '150%',
+                    borderRadius: '100px'
+                  }}
+                  disabled
+                >
+                  Buy Ticket
+                  <div
+                    className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center"
+                    style={{ borderRadius: '50px' }}
                   >
-                    Buy Ticket
-                    <div
-                      className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center"
-                      style={{ borderRadius: '50px' }}
-                    >
-                      <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                  </button>
-                </Link>
+                    <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </button>
 
                 <p
                   className="text-white/44 mt-2 sm:mt-3"

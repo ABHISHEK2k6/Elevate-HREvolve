@@ -9,7 +9,7 @@ export default function About() {
 
         {/* Content */}
         <div className="bg-white/5 backdrop-blur-sm border border-purple-500/20 rounded-3xl p-8 md:p-10">
-          <p className="text-lg md:text-xl text-purple-100 leading-relaxed">
+          <p className="text-lg md:text-xl text-purple-100 leading-relaxed text-justify">
             <a 
               href="https://hrevolve.org/" 
               target="_blank" 
