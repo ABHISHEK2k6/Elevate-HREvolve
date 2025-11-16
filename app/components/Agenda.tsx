@@ -165,12 +165,36 @@ export default function Agenda() {
 
         <div className="mb-12 sm:mb-16">
           <motion.div
-            className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+            className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center cursor-pointer group relative overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            whileHover={{
+              scale: 1.02,
+              transition: { duration: 0.2, ease: "easeOut" }
+            }}
+            whileTap={{
+              scale: 0.98,
+              transition: { duration: 0.1 }
+            }}
           >
+            {/* Animated border effect */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+              style={{
+                background: 'linear-gradient(45deg, #60a5fa, #3b82f6, #2563eb, #60a5fa)',
+                backgroundSize: '300% 300%',
+                animation: 'gradientShift 3s ease infinite',
+                mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                maskComposite: 'xor',
+                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                WebkitMaskComposite: 'xor',
+                padding: '2px',
+                zIndex: 1
+              }}
+            />
+            <div className="relative z-10">
             <h3
               className="text-white font-extraboldbold"
               style={{
@@ -183,15 +207,40 @@ export default function Agenda() {
             >
               20th November 2025
             </h3>
+            </div>
           </motion.div>
 
           <motion.div
-            className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+            className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center cursor-pointer group relative overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            whileHover={{
+              scale: 1.02,
+              transition: { duration: 0.2, ease: "easeOut" }
+            }}
+            whileTap={{
+              scale: 0.98,
+              transition: { duration: 0.1 }
+            }}
           >
+            {/* Animated border effect */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+              style={{
+                background: 'linear-gradient(45deg, #10b981, #059669, #34d399, #10b981)',
+                backgroundSize: '300% 300%',
+                animation: 'gradientShift 3s ease infinite',
+                mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                maskComposite: 'xor',
+                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                WebkitMaskComposite: 'xor',
+                padding: '2px',
+                zIndex: 1
+              }}
+            />
+            <div className="relative z-10">
             <h3
               className="text-white font-extraboldbold"
               style={{
@@ -204,6 +253,7 @@ export default function Agenda() {
             >
               Registration at 8:30 AM
             </h3>
+            </div>
           </motion.div>
 
           <div className="space-y-4 sm:space-y-6">
@@ -233,7 +283,11 @@ export default function Agenda() {
                   }}
                   whileHover={{
                     scale: 1.02,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.2, ease: "easeOut" }
+                  }}
+                  whileTap={{
+                    scale: 0.98,
+                    transition: { duration: 0.1 }
                   }}
                 >
                   {/* Animated glowing border on hover - border only */}
@@ -325,12 +379,36 @@ export default function Agenda() {
                 {item.activity === 'Inaugural Function' && (
                   <>
                     <motion.div
-                      className="border border-white/20 rounded-lg p-3 sm:p-4 my-6 sm:my-8 text-center"
+                      className="border border-white/20 rounded-lg p-3 sm:p-4 my-6 sm:my-8 text-center cursor-pointer group relative overflow-hidden"
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                      whileHover={{
+                        scale: 1.02,
+                        transition: { duration: 0.2, ease: "easeOut" }
+                      }}
+                      whileTap={{
+                        scale: 0.98,
+                        transition: { duration: 0.1 }
+                      }}
                     >
+                      {/* Animated border effect */}
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+                        style={{
+                          background: 'linear-gradient(45deg, #a855f7, #9333ea, #c084fc, #a855f7)',
+                          backgroundSize: '300% 300%',
+                          animation: 'gradientShift 3s ease infinite',
+                          mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                          maskComposite: 'xor',
+                          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                          WebkitMaskComposite: 'xor',
+                          padding: '2px',
+                          zIndex: 1
+                        }}
+                      />
+                      <div className="relative z-10">
                       <h3
                         className="text-white font-extraboldbold"
                         style={{
@@ -341,17 +419,41 @@ export default function Agenda() {
                           lineHeight: '1.4em'
                         }}
                       >
-                        Felicitation to Great Place To Work Certified Organizations
+                        Fecilitation to Great Place To Work Certified Organizations
                       </h3>
+                      </div>
                     </motion.div>
-
                     <motion.div
-                      className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+                      className="border border-white/20 rounded-lg p-3 sm:p-4 my-6 sm:my-8 text-center cursor-pointer group relative overflow-hidden"
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+                      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                      whileHover={{
+                        scale: 1.02,
+                        transition: { duration: 0.2, ease: "easeOut" }
+                      }}
+                      whileTap={{
+                        scale: 0.98,
+                        transition: { duration: 0.1 }
+                      }}
                     >
+                      {/* Animated border effect */}
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+                        style={{
+                          background: 'linear-gradient(45deg, #a855f7, #9333ea, #c084fc, #a855f7)',
+                          backgroundSize: '300% 300%',
+                          animation: 'gradientShift 3s ease infinite',
+                          mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                          maskComposite: 'xor',
+                          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                          WebkitMaskComposite: 'xor',
+                          padding: '2px',
+                          zIndex: 1
+                        }}
+                      />
+                      <div className="relative z-10">
                       <h3
                         className="text-white font-extraboldbold"
                         style={{
@@ -364,18 +466,43 @@ export default function Agenda() {
                       >
                         Setting the tone of Elevate 2025 by Deepu S Nath, MD, Faya
                       </h3>
+                      </div>
                     </motion.div>
                   </>
                 )}
                 {item.topic === 'Learning Rewired: The Skill-Shelf-Life Crisis Management' && (
                   <>
                     <motion.div
-                      className="border border-white/20 rounded-lg p-3 sm:p-4 my-6 sm:my-8 text-center"
+                      className="border border-white/20 rounded-lg p-3 sm:p-4 my-6 sm:my-8 text-center cursor-pointer group relative overflow-hidden"
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                      whileHover={{
+                        scale: 1.02,
+                        transition: { duration: 0.2, ease: "easeOut" }
+                      }}
+                      whileTap={{
+                        scale: 0.98,
+                        transition: { duration: 0.1 }
+                      }}
                     >
+                      {/* Animated border effect */}
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+                        style={{
+                          background: 'linear-gradient(45deg, #fbbf24, #f59e0b, #eab308, #fbbf24)',
+                          backgroundSize: '300% 300%',
+                          animation: 'gradientShift 3s ease infinite',
+                          mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                          maskComposite: 'xor',
+                          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                          WebkitMaskComposite: 'xor',
+                          padding: '2px',
+                          zIndex: 1
+                        }}
+                      />
+                      <div className="relative z-10">
                       <h3
                         className="text-white font-extraboldbold"
                         style={{
@@ -387,18 +514,43 @@ export default function Agenda() {
                       >
                         Lunch at 1:15 pm
                       </h3>
+                      </div>
                     </motion.div>
                   </>
                 )}
               </div>
             ))}
             <motion.div
-              className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+              className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center cursor-pointer group relative overflow-hidden"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.2, ease: "easeOut" }
+              }}
+              whileTap={{
+                scale: 0.98,
+                transition: { duration: 0.1 }
+              }}
             >
+              {/* Animated border effect */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+                style={{
+                  background: 'linear-gradient(45deg, #ec4899, #be185d, #f472b6, #ec4899)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite',
+                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  maskComposite: 'xor',
+                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  padding: '2px',
+                  zIndex: 1
+                }}
+              />
+              <div className="relative z-10">
               <h3
                 className="text-white font-extraboldbold"
                 style={{
@@ -411,14 +563,39 @@ export default function Agenda() {
               >
                 Music fiesta by MuBand
               </h3>
+              </div>
             </motion.div>
             <motion.div
-              className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center"
+              className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center cursor-pointer group relative overflow-hidden"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.2, ease: "easeOut" }
+              }}
+              whileTap={{
+                scale: 0.98,
+                transition: { duration: 0.1 }
+              }}
             >
+              {/* Animated border effect */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+                style={{
+                  background: 'linear-gradient(45deg, #8b5cf6, #7c3aed, #a78bfa, #8b5cf6)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite',
+                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  maskComposite: 'xor',
+                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  padding: '2px',
+                  zIndex: 1
+                }}
+              />
+              <div className="relative z-10">
               <h3
                 className="text-white font-extraboldbold"
                 style={{
@@ -431,6 +608,7 @@ export default function Agenda() {
               >
                 Closing Remarks
               </h3>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -643,7 +821,6 @@ export default function Agenda() {
                     </>
                   )}
                 </ul>
-
                 {/* Second set for seamless looping */}
                 <ul
                   style={{

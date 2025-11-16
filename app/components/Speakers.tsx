@@ -7,63 +7,72 @@ interface Speaker {
   title: string;
   company: string;
   image: string;
+  linkedIn?: string;
 }
 
 export default function Speakers() {
   const speakers: Speaker[] = [
     {
       name: 'Seeram Sambasiva Rao IAS',
-      title: 'Special Secretary (E & ITD) / Chairman',
+      title: 'Special Secretary (E & ITD) / Chairman,',
       company: 'Kerala State IT Mission',
       image: '/speakers/speaker_1.jpg',
     },
     {
       name: 'Anoop Ambika',
-      title: 'CEO',
+      title: 'CEO,',
       company: 'Kerala Start-up Mission',
       image: '/speakers/speaker_2.jpg',
+      linkedIn: 'https://www.linkedin.com/in/anoopambika?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Sreekumar V',
-      title: 'Secretary, GTech & Centre Head',
+      title: 'Secretary, GTech & Centre Head,',
       company: 'Tata Elxsi',
       image: '/speakers/speaker_3.jpg',
+      linkedIn: 'https://www.linkedin.com/in/sreekumarv?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Col. Sanjeev Nair (Retd.)',
-      title: 'CEO',
+      title: 'CEO,',
       company: 'Technopark',
       image: '/speakers/speaker_4.jpg',
+      linkedIn: 'https://www.linkedin.com/in/sanjeevnair13?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Deepu S Nath',
-      title: 'Managing Director',
+      title: 'Managing Director,',
       company: 'Faya',
       image: '/speakers/speaker_5.jpg',
+      linkedIn: 'https://www.linkedin.com/in/deepusnath?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Nisha Gopinath',
-      title: 'Vice President and Head of HR',
+      title: 'Vice President and Head of HR,',
       company: 'IBM India and South Asia',
       image: '/speakers/speaker_6.jpg',
+      linkedIn: 'https://www.linkedin.com/in/nisha-gopinath-4087651?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Charles Godwin',
-      title: 'HR Leader',
+      title: 'HR Leader,',
       company: 'Zoho Corporation',
       image: '/speakers/speaker_7.jpg',
+      linkedIn: 'https://www.linkedin.com/in/charlesgodwin?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Magical Rafi',
-      title: 'Founder & Chief Mentor',
+      title: 'Founder & Chief Mentor,',
       company: 'Magic of Change',
       image: '/speakers/speaker_8.jpg',
+      linkedIn: 'https://www.linkedin.com/in/mohammedrafinlptrainer?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Saurabh Singh',
-      title: 'Consulting and Capability',
+      title: 'Consulting and Capability,',
       company: 'SHRM India',
       image: '/speakers/speaker_9.jpg',
+      linkedIn: 'https://www.linkedin.com/in/learnsingh?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Karthika Nair S',
@@ -73,21 +82,24 @@ export default function Speakers() {
     },
     {
       name: 'Jayan Nair',
-      title: 'Chief People Officer',
+      title: 'Chief People Officer,',
       company: 'IBS Software Services',
       image: '/speakers/speaker_10.jpg',
+      linkedIn: 'https://www.linkedin.com/in/jayan-nair-0b11874?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Manoj Elanjickal',
-      title: 'Director - People & Culture',
+      title: 'Director - People & Culture,',
       company: 'H&R Block India',
       image: '/speakers/speaker_11.jpg',
+      linkedIn: 'https://www.linkedin.com/in/manojelanjickal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Varun Palat',
-      title: 'Deputy Vice President - HR',
+      title: 'Deputy Vice President - HR,',
       company: 'Federal Bank',
       image: '/speakers/speaker_12.jpg',
+      linkedIn: 'https://www.linkedin.com/in/varun-palat-18312912b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
   ];
 
@@ -141,10 +153,120 @@ export default function Speakers() {
             </div>
             
             <div className="flex overflow-x-auto gap-4 pb-4 pl-4 pr-4 snap-x snap-mandatory scrollbar-hide">
-              {speakers.map((speaker, index) => (
+              {speakers.map((speaker, index) => {
+                const CardContent = (
+                  <motion.div
+                    key={`mobile-${index}`}
+                    className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-blue-600/20 to-blue-800/30 border border-blue-500/30 flex-shrink-0 w-72 h-90 snap-center cursor-pointer"
+                    initial={{
+                      opacity: 0,
+                      y: 30,
+                      scale: 0.95
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                      scale: 1
+                    }}
+                    viewport={{
+                      once: true,
+                      margin: "-50px"
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.05,
+                      ease: "easeOut"
+                    }}
+                    whileHover={{
+                      scale: 1.02,
+                      y: -5,
+                      transition: {
+                        duration: 0.2,
+                        ease: "easeOut"
+                      }
+                    }}
+                  >
+                    {/* Speaker Image Container */}
+                    <motion.div
+                      className="h-70 relative bg-gradient-to-b from-blue-500/10 to-transparent overflow-hidden"
+                      initial={{ scale: 1.1, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.05 + 0.1,
+                        ease: "easeOut"
+                      }}
+                    >
+                      {/* Speaker image */}
+                      <Image
+                        src={speaker.image}
+                        alt={speaker.name}
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 288px, (max-width: 1024px) 50vw, 25vw"
+                      />
+
+                      {/* Decorative background shape */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/5 to-blue-600/10 pointer-events-none"></div>
+                    </motion.div>
+
+                    {/* Speaker Info */}
+                    <motion.div
+                      className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-500 via-[#1883ca] to-blue-700 p-4 text-center h-24 flex flex-col justify-center"
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.3,
+                        delay: index * 0.05 + 0.2,
+                        ease: "easeOut"
+                      }}
+                    >
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.3,
+                          delay: index * 0.05 + 0.3
+                        }}
+                      >
+                        <h3 className="text-lg font-bold text-white mb-1 leading-tight">
+                          {speaker.name}
+                        </h3>
+                        <p className="text-white/90 text-sm font-medium leading-tight">
+                          {speaker.title} {speaker.company}
+                        </p>
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
+                );
+
+                return speaker.linkedIn ? (
+                  <a
+                    key={`mobile-${index}`}
+                    href={speaker.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    {CardContent}
+                  </a>
+                ) : (
+                  CardContent
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Desktop/Tablet: Grid layout */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {speakers.map((speaker, index) => {
+              const CardContent = (
                 <motion.div
-                  key={`mobile-${index}`}
-                  className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-blue-600/20 to-blue-800/30 border border-blue-500/30 flex-shrink-0 w-72 h-90 snap-center"
+                  key={`desktop-${index}`}
+                  className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-blue-600/20 to-blue-800/30 border border-blue-500/30 h-96 cursor-pointer"
                   initial={{
                     opacity: 0,
                     y: 30,
@@ -175,7 +297,7 @@ export default function Speakers() {
                 >
                   {/* Speaker Image Container */}
                   <motion.div
-                    className="h-70 relative bg-gradient-to-b from-blue-500/10 to-transparent overflow-hidden"
+                    className="aspect-[3/4] relative bg-gradient-to-b from-blue-500/10 to-transparent overflow-hidden"
                     initial={{ scale: 1.1, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
@@ -190,7 +312,7 @@ export default function Speakers() {
                       src={speaker.image}
                       alt={speaker.name}
                       fill
-                      className="object-cover object-center"
+                      className="object-cover"
                       sizes="(max-width: 768px) 288px, (max-width: 1024px) 50vw, 25vw"
                     />
 
@@ -200,7 +322,7 @@ export default function Speakers() {
 
                   {/* Speaker Info */}
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-500 via-[#1883ca] to-blue-700 p-4 text-center h-24 flex flex-col justify-center"
+                    className="absolute bottom-0 left-0 right-0 bg-[#229bd3] p-4 text-center h-24 flex flex-col justify-center"
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -223,105 +345,27 @@ export default function Speakers() {
                         {speaker.name}
                       </h3>
                       <p className="text-white/90 text-sm font-medium leading-tight">
-                        {speaker.title}, {speaker.company}
+                        {speaker.title} {speaker.company}
                       </p>
                     </motion.div>
                   </motion.div>
                 </motion.div>
-              ))}
-            </div>
-          </div>
+              );
 
-          {/* Desktop/Tablet: Grid layout */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {speakers.map((speaker, index) => (
-              <motion.div
-                key={`desktop-${index}`}
-                className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-blue-600/20 to-blue-800/30 border border-blue-500/30 h-96"
-                initial={{
-                  opacity: 0,
-                  y: 30,
-                  scale: 0.95
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1
-                }}
-                viewport={{
-                  once: true,
-                  margin: "-50px"
-                }}
-                transition={{
-                  duration: 0.3,
-                  delay: index * 0.05,
-                  ease: "easeOut"
-                }}
-                whileHover={{
-                  scale: 1.02,
-                  y: -5,
-                  transition: {
-                    duration: 0.2,
-                    ease: "easeOut"
-                  }
-                }}
-              >
-                {/* Speaker Image Container */}
-                <motion.div
-                  className="aspect-[3/4] relative bg-gradient-to-b from-blue-500/10 to-transparent overflow-hidden"
-                  initial={{ scale: 1.1, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.05 + 0.1,
-                    ease: "easeOut"
-                  }}
+              return speaker.linkedIn ? (
+                <a
+                  key={`desktop-${index}`}
+                  href={speaker.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
                 >
-                  {/* Speaker image */}
-                  <Image
-                    src={speaker.image}
-                    alt={speaker.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 288px, (max-width: 1024px) 50vw, 25vw"
-                  />
-
-                  {/* Decorative background shape */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/5 to-blue-600/10 pointer-events-none"></div>
-                </motion.div>
-
-                {/* Speaker Info */}
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 bg-[#229bd3] p-4 text-center h-24 flex flex-col justify-center"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.3,
-                    delay: index * 0.05 + 0.2,
-                    ease: "easeOut"
-                  }}
-                >
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.3,
-                      delay: index * 0.05 + 0.3
-                    }}
-                  >
-                    <h3 className="text-lg font-bold text-white mb-1 leading-tight">
-                      {speaker.name}
-                    </h3>
-                    <p className="text-white/90 text-sm font-medium leading-tight">
-                      {speaker.title}, {speaker.company}
-                    </p>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-            ))}
+                  {CardContent}
+                </a>
+              ) : (
+                CardContent
+              );
+            })}
           </div>
         </div>
       </div>
