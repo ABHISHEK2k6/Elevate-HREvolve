@@ -101,6 +101,13 @@ export default function Speakers() {
       image: '/speakers/speaker_12.jpg',
       linkedIn: 'https://www.linkedin.com/in/varun-palat-18312912b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
+    {
+      name: 'Aditi Radhakrishnan',
+      title: 'Consultant & Coach,',
+      company: 'Mitara Consulting Services',
+      image: '/speakers/speaker_14.jpg',
+      linkedIn: 'https://www.linkedin.com/in/aditiradhakrishnan?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+    },
   ];
 
   return (
@@ -124,34 +131,34 @@ export default function Speakers() {
             {/* Slide indicator for mobile */}
             <div className="flex items-center justify-center gap-2 mb-4">
               <div className="flex items-center gap-2 text-white/60 text-sm">
-                <svg 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 >
                   <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
                 <span>Swipe to see more speakers</span>
-                <svg 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 >
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </div>
             </div>
-            
+
             <div className="flex overflow-x-auto gap-4 pb-4 pl-4 pr-4 snap-x snap-mandatory scrollbar-hide">
               {speakers.map((speaker, index) => {
                 const CardContent = (
@@ -261,100 +268,49 @@ export default function Speakers() {
           </div>
 
           {/* Desktop/Tablet: Grid layout */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="hidden md:flex md:flex-wrap md:justify-center gap-12">
             {speakers.map((speaker, index) => {
               const CardContent = (
                 <motion.div
-                  key={`desktop-${index}`}
-                  className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-blue-600/20 to-blue-800/30 border border-blue-500/30 h-96 cursor-pointer"
-                  initial={{
-                    opacity: 0,
-                    y: 30,
-                    scale: 0.95
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1
-                  }}
-                  viewport={{
-                    once: true,
-                    margin: "-50px"
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    delay: index * 0.05,
-                    ease: "easeOut"
-                  }}
+                  key={index}
+                  className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-blue-600/20 to-blue-800/30 border border-blue-500/30 h-96 cursor-pointer w-[260px]"
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.3, delay: index * 0.05, ease: "easeOut" }}
                   whileHover={{
                     scale: 1.02,
                     y: -5,
-                    transition: {
-                      duration: 0.2,
-                      ease: "easeOut"
-                    }
+                    transition: { duration: 0.2, ease: "easeOut" }
                   }}
                 >
-                  {/* Speaker Image Container */}
+                  {/* Speaker image box */}
                   <motion.div
-                    className="aspect-[3/4] relative bg-gradient-to-b from-blue-500/10 to-transparent overflow-hidden"
-                    initial={{ scale: 1.1, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.05 + 0.1,
-                      ease: "easeOut"
-                    }}
+                    className="aspect-[3/4] relative overflow-hidden"
                   >
-                    {/* Speaker image */}
                     <Image
                       src={speaker.image}
                       alt={speaker.name}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 288px, (max-width: 1024px) 50vw, 25vw"
                     />
-
-                    {/* Decorative background shape */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/5 to-blue-600/10 pointer-events-none"></div>
                   </motion.div>
 
-                  {/* Speaker Info */}
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 bg-[#229bd3] p-4 text-center h-24 flex flex-col justify-center"
-                    initial={{ y: 50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.3,
-                      delay: index * 0.05 + 0.2,
-                      ease: "easeOut"
-                    }}
-                  >
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.3,
-                        delay: index * 0.05 + 0.3
-                      }}
-                    >
-                      <h3 className="text-lg font-bold text-white mb-1 leading-tight">
-                        {speaker.name}
-                      </h3>
-                      <p className="text-white/90 text-sm font-medium leading-tight">
-                        {speaker.title} {speaker.company}
-                      </p>
-                    </motion.div>
-                  </motion.div>
+                  {/* Info bar */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#229bd3] p-4 text-center h-24 flex flex-col justify-center">
+                    <h3 className="text-lg font-bold text-white mb-1">
+                      {speaker.name}
+                    </h3>
+                    <p className="text-white/90 text-sm font-medium">
+                      {speaker.title} {speaker.company}
+                    </p>
+                  </div>
                 </motion.div>
               );
 
               return speaker.linkedIn ? (
                 <a
-                  key={`desktop-${index}`}
+                  key={index}
                   href={speaker.linkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -363,7 +319,7 @@ export default function Speakers() {
                   {CardContent}
                 </a>
               ) : (
-                CardContent
+                <div key={index}>{CardContent}</div>
               );
             })}
           </div>
