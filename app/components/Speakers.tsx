@@ -26,6 +26,13 @@ export default function Speakers() {
       linkedIn: 'https://www.linkedin.com/in/anoopambika?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
+      name: 'Jayasankar Prasad C',
+      title: 'Director,',
+      company: 'CMD',
+      image: '/speakers/speaker_15.jpg',
+      linkedIn: 'https://www.linkedin.com/in/jayasankar-prasad-c-b5459bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    },
+    {
       name: 'Sreekumar V',
       title: 'Secretary, GTech & Centre Head,',
       company: 'Tata Elxsi',
@@ -83,7 +90,7 @@ export default function Speakers() {
     {
       name: 'Jayan Nair',
       title: 'Chief People Officer,',
-      company: 'IBS Software Services',
+      company: 'IBS Software',
       image: '/speakers/speaker_10.jpg',
       linkedIn: 'https://www.linkedin.com/in/jayan-nair-0b11874?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
