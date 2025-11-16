@@ -99,7 +99,7 @@ export default function Agenda() {
     },
     {
       activity: 'Inaugural Function',
-      speakers: '• Seeram Sambasiva Rao IAS: Special Secretary (E & ITD) / Chairman, Kerala State IT Mission\n• Anoop Ambika, CEO, Kerala Start-up Mission\n• Sreekumar V, Secretary, GTech, Centre Head Tata Elxsi\n• Col. Sanjeev Nair (Retd.), CEO, Technopark\n• Deepu S Nath, MD, Faya\n• Jayasankar Prasad C, Director, CMD',
+      speakers: '• Seeram Sambasiva Rao IAS: Special Secretary (E & ITD) / Chairman, Kerala State IT Mission\n•Dr.Jayasankar Prasad C, Director, CMD\n• Anoop Ambika, CEO, Kerala Start-up Mission\n• Sreekumar V, Secretary, GTech, Centre Head Tata Elxsi\n• Col. Sanjeev Nair (Retd.), CEO, Technopark\n• Deepu S Nath, MD, Faya',
       topic: '',
       type: 'admin'
     },
@@ -135,7 +135,7 @@ export default function Agenda() {
     },
     {
       activity: 'Panel Discussion',
-      speakers: '• Jayan Nair, Chief People Officer - IBS Software Services\n• Manoj Elanjickal, Director - People & Culture, H&R Block India\n• Varun Palat, Deputy Vice President - HR, Federal Bank\n•Karthika Nair S, Associate Director\n•Aditi Radhakrishnan, Consultant & Coach - Mitara Consulting Services',
+      speakers: '• Jayan Nair, Chief People Officer - IBS Software\n• Manoj Elanjickal, Director - People & Culture, H&R Block India\n• Varun Palat, Deputy Vice President - HR, Federal Bank\n•Karthika Nair S, Associate Director\n•Aditi Radhakrishnan, Consultant & Coach - Mitara Consulting Services',
       topic: 'Future of Work - Bridging the Human-AI Continuum',
       type: 'panel'
     }

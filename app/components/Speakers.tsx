@@ -19,18 +19,18 @@ export default function Speakers() {
       image: '/speakers/speaker_1.jpg',
     },
     {
+      name: 'Dr.Jayasankar Prasad C',
+      title: 'Director,',
+      company: 'CMD',
+      image: '/speakers/speaker_15.jpg',
+      linkedIn: 'https://www.linkedin.com/in/jayasankar-prasad-c-b5459bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    },
+    {
       name: 'Anoop Ambika',
       title: 'CEO,',
       company: 'Kerala Start-up Mission',
       image: '/speakers/speaker_2.jpg',
       linkedIn: 'https://www.linkedin.com/in/anoopambika?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-    },
-    {
-      name: 'Jayasankar Prasad C',
-      title: 'Director,',
-      company: 'CMD',
-      image: '/speakers/speaker_15.jpg',
-      linkedIn: 'https://www.linkedin.com/in/jayasankar-prasad-c-b5459bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
       name: 'Sreekumar V',
