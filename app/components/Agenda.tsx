@@ -419,7 +419,7 @@ export default function Agenda() {
                           lineHeight: '1.4em'
                         }}
                       >
-                        Fecilitation to Great Place To Work Certified Organizations
+                        Felicitation to Great Place To Work Certified Organizations
                       </h3>
                       </div>
                     </motion.div>
