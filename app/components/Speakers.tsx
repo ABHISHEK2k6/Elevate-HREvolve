@@ -54,6 +54,12 @@ export default function Speakers() {
       linkedIn: 'https://www.linkedin.com/in/deepusnath?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
     {
+      name: 'Raj Gopal R',
+      title: 'Deputy Vice President & Regional Head,',
+      company: 'Federal Bank',
+      image: '/speakers/speaker_16.jpg',
+    },
+    {
       name: 'Nisha Gopinath',
       title: 'Vice President and Head of HR,',
       company: 'IBM India and South Asia',
@@ -114,6 +120,13 @@ export default function Speakers() {
       company: 'Mitara Consulting Services',
       image: '/speakers/speaker_14.jpg',
       linkedIn: 'https://www.linkedin.com/in/aditiradhakrishnan?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+    },
+    {
+      name: 'Dr. Thomas George K ',
+      title: 'Director,',
+      company: 'LEAD College (Autonomous)',
+      image: '/speakers/speaker_17.jpg',
+      linkedIn: 'https://www.linkedin.com/in/thomasgeorgek?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     },
   ];
 

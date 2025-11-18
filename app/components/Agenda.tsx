@@ -99,7 +99,7 @@ export default function Agenda() {
     },
     {
       activity: 'Inaugural Function',
-      speakers: '• Seeram Sambasiva Rao IAS: Special Secretary (E & ITD) / Chairman, Kerala State IT Mission\n•Dr.Jayasankar Prasad C, Director, CMD\n• Anoop Ambika, CEO, Kerala Start-up Mission\n• Sreekumar V, Secretary, GTech, Centre Head Tata Elxsi\n• Col. Sanjeev Nair (Retd.), CEO, Technopark\n• Deepu S Nath, MD, Faya',
+      speakers: '• Seeram Sambasiva Rao IAS: Special Secretary (E & ITD) / Chairman, Kerala State IT Mission\n•Dr.Jayasankar Prasad C, Director, CMD\n• Anoop Ambika, CEO, Kerala Start-up Mission\n• Sreekumar V, Secretary, GTech, Centre Head Tata Elxsi\n• Col. Sanjeev Nair (Retd.), CEO, Technopark\n• Deepu S Nath, MD, Faya\n• Raj Gopal R, Deputy Vice President & Regional Head, Federal Bank',
       topic: '',
       type: 'admin'
     },
@@ -113,6 +113,12 @@ export default function Agenda() {
       activity: 'Power Talk',
       speakers: 'Charles Godwin,\nHR Leader, Zoho Corporation',
       topic: 'Learning Rewired: The Skill-Shelf-Life Crisis Management',
+      type: 'session'
+    },
+    {
+      activity: 'Special Address',
+      speakers: ' Dr.Thomas George K,\nDirector, LEAD College (Autonomous)',
+      topic: '',
       type: 'session'
     },
     {
@@ -135,7 +141,7 @@ export default function Agenda() {
     },
     {
       activity: 'Panel Discussion',
-      speakers: '• Jayan Nair, Chief People Officer - IBS Software\n• Manoj Elanjickal, Director - People & Culture, H&R Block India\n• Varun Palat, Deputy Vice President - HR, Federal Bank\n•Karthika Nair S, Associate Director\n•Aditi Radhakrishnan, Consultant & Coach - Mitara Consulting Services',
+      speakers: '•Aditi Radhakrishnan, Consultant & Coach - Mitara Consulting Services\n• Jayan Nair, Chief People Officer - IBS Software\n• Manoj Elanjickal, Director - People & Culture, H&R Block India\n• Varun Palat, Deputy Vice President - HR, Federal Bank\n•Karthika Nair S, Associate Director',
       topic: 'Future of Work - Bridging the Human-AI Continuum',
       type: 'panel'
     }
@@ -520,6 +526,52 @@ export default function Agenda() {
                 )}
               </div>
             ))}
+
+                        <motion.div
+              className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center cursor-pointer group relative overflow-hidden"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.2, ease: "easeOut" }
+              }}
+              whileTap={{
+                scale: 0.98,
+                transition: { duration: 0.1 }
+              }}
+            >
+              {/* Animated border effect */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
+                style={{
+                  background: 'linear-gradient(45deg, #8b5cf6, #7c3aed, #a78bfa, #8b5cf6)',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradientShift 3s ease infinite',
+                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  maskComposite: 'xor',
+                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  padding: '2px',
+                  zIndex: 1
+                }}
+              />
+              <div className="relative z-10">
+              <h3
+                className="text-white font-extraboldbold"
+                style={{
+                  fontFamily: '"Sora", "Sora Placeholder", sans-serif',
+                  fontSize: 'clamp(16px, 4vw, 18px)',
+                  fontWeight: 600,
+                  letterSpacing: '-0.03em',
+                  lineHeight: '1.4em'
+                }}
+              >
+                Closing Remarks
+              </h3>
+              </div>
+            </motion.div>
             <motion.div
               className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center cursor-pointer group relative overflow-hidden"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -565,72 +617,8 @@ export default function Agenda() {
               </h3>
               </div>
             </motion.div>
-            <motion.div
-              className="border border-white/20 rounded-lg p-3 sm:p-4 mb-6 sm:mb-8 text-center cursor-pointer group relative overflow-hidden"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-              whileHover={{
-                scale: 1.02,
-                transition: { duration: 0.2, ease: "easeOut" }
-              }}
-              whileTap={{
-                scale: 0.98,
-                transition: { duration: 0.1 }
-              }}
-            >
-              {/* Animated border effect */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
-                style={{
-                  background: 'linear-gradient(45deg, #8b5cf6, #7c3aed, #a78bfa, #8b5cf6)',
-                  backgroundSize: '300% 300%',
-                  animation: 'gradientShift 3s ease infinite',
-                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                  maskComposite: 'xor',
-                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                  WebkitMaskComposite: 'xor',
-                  padding: '2px',
-                  zIndex: 1
-                }}
-              />
-              <div className="relative z-10">
-              <h3
-                className="text-white font-extraboldbold"
-                style={{
-                  fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-                  fontSize: 'clamp(16px, 4vw, 18px)',
-                  fontWeight: 600,
-                  letterSpacing: '-0.03em',
-                  lineHeight: '1.4em'
-                }}
-              >
-                Closing Remarks
-              </h3>
-              </div>
-            </motion.div>
           </div>
         </div>
-
-        <motion.div
-          className="mt-8 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        >
-          <p
-            className="text-white/70 italic text-sm"
-            style={{
-              fontFamily: '"Sora", "Sora Placeholder", sans-serif',
-              fontSize: 'clamp(12px, 3vw, 14px)',
-              lineHeight: '1.4em'
-            }}
-          >
-            *as of 14th November 2025, and subject to refinement
-          </p>
-        </motion.div>
 
         {/* Ticker Section with SOLD OUT marquee */}
         <div className='overflow-hidden'>
