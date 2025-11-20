@@ -49,20 +49,21 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/hr.png?v=2", type: "image/png", sizes: "32x32" },
-      { url: "/hr.png?v=2", type: "image/png", sizes: "16x16" },
+      { url: "/hr.png?v=4", type: "image/png", sizes: "32x32" },
+      { url: "/hr.png?v=4", type: "image/png", sizes: "16x16" },
+      { url: "/hr.png?v=4", type: "image/png", sizes: "any" },
     ],
-    shortcut: "/hr.png?v=2",
+    shortcut: "/hr.png?v=4",
     apple: [
-      { url: "/hr.png?v=2", sizes: "180x180", type: "image/png" },
-      { url: "/hr.png?v=2", sizes: "152x152", type: "image/png" },
-      { url: "/hr.png?v=2", sizes: "144x144", type: "image/png" },
-      { url: "/hr.png?v=2", sizes: "120x120", type: "image/png" },
-      { url: "/hr.png?v=2", sizes: "114x114", type: "image/png" },
-      { url: "/hr.png?v=2", sizes: "76x76", type: "image/png" },
-      { url: "/hr.png?v=2", sizes: "72x72", type: "image/png" },
-      { url: "/hr.png?v=2", sizes: "60x60", type: "image/png" },
-      { url: "/hr.png?v=2", sizes: "57x57", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "180x180", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "152x152", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "144x144", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "120x120", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "114x114", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "76x76", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "72x72", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "60x60", type: "image/png" },
+      { url: "/hr.png?v=3", sizes: "57x57", type: "image/png" },
     ],
     other: [],
   },
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
     description: "Join us for ELEVATE25, the ultimate HR Conclave on November 20, 2025. Shaping the Future: Leading through the Human–AI Nexus. Discover insights on AI in HR, talent management, and the future of work.",
     images: [
       {
-        url: "/hr.png?v=2",
+        url: "/hr.png?v=3",
         width: 1200,
         height: 630,
         alt: "ELEVATE25 HR Conclave - Shaping the Future through Human-AI Nexus",
@@ -92,7 +93,7 @@ export const metadata: Metadata = {
     description: "Join us for ELEVATE25, the ultimate HR Conclave on November 20, 2025. Shaping the Future: Leading through the Human–AI Nexus.",
     images: [
       {
-        url: "/hr.png?v=2",
+        url: "/hr.png?v=3",
         alt: "ELEVATE25 HR Conclave Logo",
       },
     ],
@@ -136,7 +137,7 @@ export default function RootLayout({
       }
     },
     "image": [
-      "/hr.png?v=2"
+      "/hr.png?v=3"
     ],
     "organizer": {
       "@type": "Organization",
@@ -166,12 +167,14 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
-        {/* Favicon and Icons */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/hr.png?v=2" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/hr.png?v=2" />
-        <link rel="apple-touch-icon" href="/hr.png?v=2" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/hr.png?v=2" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/hr.png?v=2" />
+        {/* Favicon and Icons - Explicit PNG favicon to override Vercel default */}
+        <link rel="icon" href="/hr.png?v=4" type="image/png" />
+        <link rel="icon" href="/hr.png?v=4" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/hr.png?v=4" type="image/png" sizes="16x16" />
+        <link rel="shortcut icon" href="/hr.png?v=4" type="image/png" />
+        <link rel="apple-touch-icon" href="/hr.png?v=4" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/hr.png?v=4" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/hr.png?v=4" />
         
         <meta name="theme-color" content="#1883ca" />
         <meta name="msapplication-TileColor" content="#1883ca" />
