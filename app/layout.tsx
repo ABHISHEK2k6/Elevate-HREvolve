@@ -20,33 +20,103 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NODE_ENV === 'production' 
-    ? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://elevate25.netlify.app')
+    ? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://elevate25.hrevolve.org')
     : 'http://localhost:3000'),
-  title: "ELEVATE25 - Shaping the Future | HR Conclave",
-  description: "Join us on 20th November 2025 for ELEVATE25, the ultimate HR Conclave. Shaping the Future: Leading through the Human–AI Nexus. Stay tuned for insights on AI, talent management, and the future of work.",
-  icons: {
-    icon: "/hr.png",
-    shortcut: "/hr.png",
-    apple: "/hr.png",
+  title: {
+    default: "ELEVATE25 - Shaping the Future | HR Conclave 2025",
+    template: "%s | ELEVATE25 HR Conclave"
   },
-  openGraph: {
-    title: "ELEVATE25 - Shaping the Future | HR Conclave",
-    description: "Join us on 20th November 2025 for ELEVATE25, the ultimate HR Conclave. Shaping the Future: Leading through the Human–AI Nexus.",
-    images: [
+  description: "Join us for ELEVATE25, the ultimate HR Conclave on November 20, 2025. Shaping the Future: Leading through the Human–AI Nexus. Discover insights on AI in HR, talent management, future of work, and human-centric leadership strategies.",
+  keywords: [
+    "HR Conclave",
+    "ELEVATE25", 
+    "Human Resources",
+    "AI in HR",
+    "Talent Management",
+    "Future of Work",
+    "HR Technology",
+    "Human-AI Nexus",
+    "Leadership",
+    "HR Conference 2025"
+  ],
+  authors: [{ name: "HREvolve" }],
+  creator: "HREvolve",
+  publisher: "HREvolve",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      { url: "/hr.png?v=1", type: "image/png", sizes: "32x32" },
+      { url: "/hr.png?v=1", type: "image/png", sizes: "16x16" },
+      { url: "/logo.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/hr.png?v=1",
+    apple: [
+      { url: "/hr.png?v=1", sizes: "180x180", type: "image/png" },
+      { url: "/hr.png?v=1", sizes: "152x152", type: "image/png" },
+      { url: "/hr.png?v=1", sizes: "144x144", type: "image/png" },
+      { url: "/hr.png?v=1", sizes: "120x120", type: "image/png" },
+      { url: "/hr.png?v=1", sizes: "114x114", type: "image/png" },
+      { url: "/hr.png?v=1", sizes: "76x76", type: "image/png" },
+      { url: "/hr.png?v=1", sizes: "72x72", type: "image/png" },
+      { url: "/hr.png?v=1", sizes: "60x60", type: "image/png" },
+      { url: "/hr.png?v=1", sizes: "57x57", type: "image/png" },
+    ],
+    other: [
       {
-        url: "/hr.png",
-        width: 1200,
-        height: 630,
-        alt: "ELEVATE25 HR Conclave Logo",
+        rel: "mask-icon",
+        url: "/logo.svg",
+        color: "#1883ca",
       },
     ],
+  },
+  manifest: "/site.webmanifest",
+  openGraph: {
     type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "ELEVATE25 HR Conclave",
+    title: "ELEVATE25 - Shaping the Future | HR Conclave 2025",
+    description: "Join us for ELEVATE25, the ultimate HR Conclave on November 20, 2025. Shaping the Future: Leading through the Human–AI Nexus. Discover insights on AI in HR, talent management, and the future of work.",
+    images: [
+      {
+        url: "/hr.png?v=1",
+        width: 1200,
+        height: 630,
+        alt: "ELEVATE25 HR Conclave - Shaping the Future through Human-AI Nexus",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ELEVATE25 - Shaping the Future | HR Conclave",
-    description: "Join us on 20th November 2025 for ELEVATE25, the ultimate HR Conclave. Shaping the Future: Leading through the Human–AI Nexus.",
-    images: ["/hr.png"],
+    site: "@HREvolve",
+    creator: "@HREvolve",
+    title: "ELEVATE25 - Shaping the Future | HR Conclave 2025",
+    description: "Join us for ELEVATE25, the ultimate HR Conclave on November 20, 2025. Shaping the Future: Leading through the Human–AI Nexus.",
+    images: [
+      {
+        url: "/hr.png?v=1",
+        alt: "ELEVATE25 HR Conclave Logo",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
   },
 };
 
@@ -55,8 +125,75 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "ELEVATE25 - HR Conclave",
+    "description": "Shaping the Future: Leading through the Human–AI Nexus. The ultimate HR Conclave featuring insights on AI in HR, talent management, and the future of work.",
+    "startDate": "2025-11-20T09:00:00+05:30",
+    "endDate": "2025-11-20T18:00:00+05:30",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Event Venue",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    },
+    "image": [
+      "/hr.png?v=1"
+    ],
+    "organizer": {
+      "@type": "Organization",
+      "name": "HREvolve",
+      "url": "https://elevate25.hrevolve.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://elevate25.hrevolve.org",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-01-01T00:00:00+05:30"
+    },
+    "performer": {
+      "@type": "Organization", 
+      "name": "Industry HR Leaders and AI Experts"
+    }
+  };
+
   return (
     <html lang="en" style={{ scrollBehavior: 'smooth' }}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+        {/* Favicon and Icons */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/hr.png?v=1" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/hr.png?v=1" />
+        <link rel="apple-touch-icon" href="/hr.png?v=1" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/hr.png?v=1" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/hr.png?v=1" />
+        <link rel="mask-icon" href="/logo.svg" color="#1883ca" />
+        
+        <meta name="theme-color" content="#1883ca" />
+        <meta name="msapplication-TileColor" content="#1883ca" />
+        <meta name="msapplication-TileImage" content="/hr.png" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="ELEVATE25" />
+        <meta name="application-name" content="ELEVATE25" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="canonical" href="https://elevate25.hrevolve.org" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} antialiased`}
         style={{ overflowX: 'hidden' }}
